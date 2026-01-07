@@ -1,0 +1,1719 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CP Agencia Boutique | Viajes a Perú</title>
+  <meta name="description" content="CP Agencia Boutique: turismo boutique en Perú. Hoteles, traslados, guiados y tours con enfoque sostenible y experiencias auténticas." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --stone: #1a1814;
+      --cream: #faf8f5;
+      --terracotta: #c4533a;
+      --gold: #b8860b;
+      --sage: #7d8c6e;
+      --sand: #e8e0d5;
+      --mist: rgba(26,24,20,.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--stone);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* === HEADER === */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background .4s ease, backdrop-filter .4s ease;
+    }
+
+    header.scrolled {
+      background: rgba(250,248,245,.9);
+      backdrop-filter: blur(20px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      color: var(--stone);
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+
+    nav {
+      display: none;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--stone);
+      font-size: .875rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--terracotta);
+      transition: width .3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: .5rem;
+    }
+
+    .lang-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(26,24,20,.15);
+      background: transparent;
+      cursor: pointer;
+      font-size: .8rem;
+      transition: all .2s ease;
+      display: grid;
+      place-items: center;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+      background: var(--stone);
+      color: var(--cream);
+      border-color: var(--stone);
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.5rem;
+      background: var(--stone);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: .875rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+      border-radius: 100px;
+      transition: all .3s ease;
+    }
+
+    .btn-cta:hover {
+      background: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .5rem;
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--stone);
+      transition: all .3s ease;
+    }
+
+    /* === HERO === */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.85);
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes slowZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(26,24,20,.2) 0%,
+        rgba(26,24,20,.1) 40%,
+        rgba(26,24,20,.6) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+      padding-bottom: 4rem;
+      color: var(--cream);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: .9;
+    }
+
+    .hero-kicker::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      max-width: 14ch;
+      margin-bottom: 1.5rem;
+      animation: fadeUp .8s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { 
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      max-width: 50ch;
+      opacity: .9;
+      margin-bottom: 2rem;
+      animation: fadeUp .8s ease-out .2s backwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      animation: fadeUp .8s ease-out .4s backwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: 1rem 2rem;
+      background: var(--cream);
+      color: var(--stone);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+      border-radius: 100px;
+      transition: all .3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: var(--cream);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+      border: 1px solid rgba(250,248,245,.4);
+      border-radius: 100px;
+      transition: all .3s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(250,248,245,.1);
+      border-color: var(--cream);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: var(--cream);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .7;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    .scroll-indicator svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* === INTRO === */
+    .intro {
+      padding: 6rem 2rem;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: var(--cream);
+      position: relative;
+    }
+
+    .intro::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--sand), transparent);
+    }
+
+    .intro-content {
+      max-width: 700px;
+    }
+
+    .intro-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-text {
+      color: var(--mist);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .divider-icon {
+      margin-top: 3rem;
+      opacity: .3;
+    }
+
+    /* === SERVICES === */
+    .services {
+      padding: 4rem 2rem 6rem;
+      background: var(--sand);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: .75rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      padding: 2.5rem 2rem;
+      background: var(--cream);
+      border-radius: 20px;
+      transition: all .4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(26,24,20,.1);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 1.5rem;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+    }
+
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: .75rem;
+    }
+
+    .service-desc {
+      color: var(--mist);
+      font-size: .95rem;
+      line-height: 1.7;
+    }
+
+    /* === TOURS === */
+    .tours {
+      padding: 6rem 2rem;
+      background: var(--cream);
+    }
+
+    .tours-showcase {
+      display: grid;
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .tour-item {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .tour-item:nth-child(even) .tour-image {
+      order: 1;
+    }
+
+    .tour-image {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .tour-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .tour-item:hover .tour-image img {
+      transform: scale(1.05);
+    }
+
+    .tour-badge {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      padding: .5rem 1rem;
+      background: rgba(250,248,245,.95);
+      backdrop-filter: blur(10px);
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    .tour-content {
+      padding: 1rem 0;
+    }
+
+    .tour-duration {
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: .75rem;
+    }
+
+    .tour-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .tour-desc {
+      color: var(--mist);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .tour-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .tour-tag {
+      padding: .4rem .9rem;
+      background: var(--sand);
+      border-radius: 100px;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--stone);
+    }
+
+    /* === GALLERY === */
+    .gallery {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .gallery-title {
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+      background: var(--stone);
+      color: var(--cream);
+    }
+
+    .gallery-title .section-label {
+      color: var(--gold);
+    }
+
+    .gallery-title .section-title {
+      color: var(--cream);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+    }
+
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item:first-child {
+      grid-column: span 2;
+      aspect-ratio: 2/1;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,24,20,.6), transparent);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all .4s ease;
+      z-index: 2;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === APPROACH === */
+    .approach {
+      padding: 6rem 2rem;
+      background: var(--cream);
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .approach-card {
+      padding: 3rem;
+      background: linear-gradient(135deg, var(--sand), rgba(232,224,213,.3));
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .approach-card.featured {
+      background: var(--stone);
+      color: var(--cream);
+    }
+
+    .approach-card.featured .approach-icon {
+      color: var(--gold);
+    }
+
+    .approach-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .approach-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .approach-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      opacity: .85;
+    }
+
+    .approach-values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.5rem;
+    }
+
+    .value-tag {
+      padding: .5rem 1rem;
+      background: rgba(250,248,245,.15);
+      border-radius: 100px;
+      font-size: .8rem;
+      font-weight: 500;
+    }
+
+    .approach-card:not(.featured) .value-tag {
+      background: rgba(26,24,20,.08);
+    }
+
+    /* === CONTACT === */
+    .contact {
+      padding: 6rem 2rem;
+      background: var(--sand);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      padding: 2.5rem;
+      background: var(--stone);
+      color: var(--cream);
+      border-radius: 24px;
+    }
+
+    .contact-info-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info-text {
+      opacity: .8;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(250,248,245,.1);
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(250,248,245,.1);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+
+    .contact-detail-label {
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .6;
+      margin-bottom: .25rem;
+    }
+
+    .contact-detail-value {
+      font-weight: 500;
+    }
+
+    .contact-form {
+      padding: 2.5rem;
+      background: var(--cream);
+      border-radius: 24px;
+    }
+
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-bottom: .5rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(26,24,20,.12);
+      border-radius: 12px;
+      background: white;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--stone);
+      transition: all .3s ease;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 4px rgba(196,83,58,.1);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 1.1rem 2rem;
+      background: var(--stone);
+      color: var(--cream);
+      border: none;
+      border-radius: 100px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+
+    .form-submit:hover {
+      background: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .form-message {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(184,134,11,.1);
+      border-radius: 12px;
+      text-align: center;
+      display: none;
+    }
+
+    .form-message.show {
+      display: block;
+    }
+
+    /* === FOOTER === */
+    footer {
+      padding: 4rem 2rem;
+      background: var(--stone);
+      color: var(--cream);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .footer-logo .logo-mark {
+      width: 48px;
+      height: 48px;
+    }
+
+    .footer-logo .logo-text {
+      font-size: 1.5rem;
+      color: var(--cream);
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      opacity: .7;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: .9rem;
+      opacity: .7;
+      transition: opacity .3s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .footer-copy {
+      font-size: .85rem;
+      opacity: .5;
+    }
+
+    /* === MOBILE MENU === */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .4s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--stone);
+    }
+
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--stone);
+      text-decoration: none;
+      transition: color .3s ease;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--terracotta);
+    }
+
+    /* === RESPONSIVE === */
+    @media (min-width: 768px) {
+      header {
+        padding: 1.5rem 3rem;
+      }
+
+      .hero-content {
+        padding: 3rem;
+        padding-bottom: 5rem;
+      }
+
+      .tour-item {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+        aspect-ratio: 1;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .approach-card.featured {
+        grid-column: span 2;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      nav {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .hero-content {
+        padding: 4rem 5rem;
+        padding-bottom: 6rem;
+      }
+
+      .intro {
+        padding: 8rem 2rem;
+      }
+
+      .services {
+        padding: 6rem 3rem 8rem;
+      }
+
+      .tours {
+        padding: 8rem 3rem;
+      }
+
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">CP</div>
+      <span class="logo-text">CP Agencia Boutique</span>
+    </a>
+
+    <nav>
+      <a href="#servicios" data-i18n="nav.services">Servicios</a>
+      <a href="#tours" data-i18n="nav.tours">Tours</a>
+      <a href="#galeria" data-i18n="nav.gallery">Galería</a>
+      <a href="#enfoque" data-i18n="nav.approach">Enfoque</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btn-es" title="Español">ES</button>
+        <button class="lang-btn" id="btn-en" title="English">EN</button>
+      </div>
+      <a href="#contacto" class="btn-cta" data-i18n="nav.cta">Cotizar</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="menu-close">×</button>
+    <a href="#servicios" data-i18n="nav.services">Servicios</a>
+    <a href="#tours" data-i18n="nav.tours">Tours</a>
+    <a href="#galeria" data-i18n="nav.gallery">Galería</a>
+    <a href="#enfoque" data-i18n="nav.approach">Enfoque</a>
+    <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1920&q=80" alt="Machu Picchu al amanecer" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-kicker" data-i18n="hero.kicker">Experiencias boutique en Perú</span>
+      <h1 class="hero-title" data-i18n="hero.title">Viaja con alma, descubre lo auténtico</h1>
+      <p class="hero-desc" data-i18n="hero.desc">Diseñamos experiencias únicas en Perú: hoteles selectos, guías expertos y una logística impecable para que solo te preocupes de vivir el momento.</p>
+      <div class="hero-ctas">
+        <a href="#tours" class="btn-primary" data-i18n="hero.cta1">Explorar tours</a>
+        <a href="#enfoque" class="btn-outline" data-i18n="hero.cta2">Nuestro enfoque</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-content">
+      <h2 class="intro-title serif" data-i18n="intro.title">Turismo con intención, viajes con significado</h2>
+      <p class="intro-text" data-i18n="intro.text">No somos una agencia más. Creemos que viajar bien es viajar con calma, con conexión real con el destino y con el soporte de alguien que realmente conoce cada rincón del Perú. Cada itinerario es una conversación, cada experiencia está cuidada al detalle.</p>
+      <div class="divider-icon">✦</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="servicios">
+    <div class="section-header">
+      <p class="section-label" data-i18n="services.label">Lo que hacemos</p>
+      <h2 class="section-title" data-i18n="services.title">Servicios</h2>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <span class="service-icon">🏨</span>
+        <h3 class="service-title" data-i18n="services.s1.title">Hoteles boutique</h3>
+        <p class="service-desc" data-i18n="services.s1.desc">Seleccionamos hospedajes con alma: desde haciendas históricas hasta lodges con vistas únicas. Cada lugar cuenta una historia.</p>
+      </article>
+
+      <article class="service-card">
+        <span class="service-icon">🚐</span>
+        <h3 class="service-title" data-i18n="services.s2.title">Traslados privados</h3>
+        <p class="service-desc" data-i18n="services.s2.desc">Movilidad segura y puntual. Aeropuertos, rutas internas y transfers coordinados para que fluyas sin preocupaciones.</p>
+      </article>
+
+      <article class="service-card">
+        <span class="service-icon">🎙️</span>
+        <h3 class="service-title" data-i18n="services.s3.title">Guías expertos</h3>
+        <p class="service-desc" data-i18n="services.s3.desc">Profesionales bilingües con narrativa cultural auténtica. No solo informan: conectan, inspiran y adaptan el ritmo a tu grupo.</p>
+      </article>
+
+      <article class="service-card">
+        <span class="service-icon">🗺️</span>
+        <h3 class="service-title" data-i18n="services.s4.title">Planificación a medida</h3>
+        <p class="service-desc" data-i18n="services.s4.desc">Diseñamos itinerarios según tus fechas, energía, intereses y temporada. Nada genérico: todo pensado para ti.</p>
+      </article>
+
+      <article class="service-card">
+        <span class="service-icon">🎫</span>
+        <h3 class="service-title" data-i18n="services.s5.title">Operación integral</h3>
+        <p class="service-desc" data-i18n="services.s5.desc">Reservas, tickets, tiempos, proveedores y soporte en ruta. Coordinamos todo para que tú solo disfrutes.</p>
+      </article>
+
+      <article class="service-card">
+        <span class="service-icon">📞</span>
+        <h3 class="service-title" data-i18n="services.s6.title">Soporte continuo</h3>
+        <p class="service-desc" data-i18n="services.s6.desc">Acompañamiento antes, durante y después del viaje. Estamos a una llamada de distancia, siempre.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section class="tours" id="tours">
+    <div class="section-header">
+      <p class="section-label" data-i18n="tours.label">Rutas sugeridas</p>
+      <h2 class="section-title" data-i18n="tours.title">Tours destacados</h2>
+    </div>
+
+    <div class="tours-showcase">
+      <article class="tour-item">
+        <div class="tour-image">
+          <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80" alt="Machu Picchu" loading="lazy" />
+          <span class="tour-badge" data-i18n="tours.t1.badge">Más popular</span>
+        </div>
+        <div class="tour-content">
+          <p class="tour-duration" data-i18n="tours.t1.duration">4 – 6 días</p>
+          <h3 class="tour-title" data-i18n="tours.t1.title">Cusco, Valle Sagrado y Machu Picchu</h3>
+          <p class="tour-desc" data-i18n="tours.t1.desc">El viaje clásico que no puede faltar. Historia milenaria, paisajes andinos de ensueño y la magia de la ciudadela inca. Incluye hoteles boutique, guías expertos y experiencias gastronómicas locales.</p>
+          <div class="tour-tags">
+            <span class="tour-tag" data-i18n="tags.culture">Cultura</span>
+            <span class="tour-tag" data-i18n="tags.history">Historia</span>
+            <span class="tour-tag" data-i18n="tags.nature">Naturaleza</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tour-item">
+        <div class="tour-image">
+          <img src="https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=800&q=80" alt="Lima gastronómica" loading="lazy" />
+          <span class="tour-badge" data-i18n="tours.t2.badge">Gourmet</span>
+        </div>
+        <div class="tour-content">
+          <p class="tour-duration" data-i18n="tours.t2.duration">2 – 3 días</p>
+          <h3 class="tour-title" data-i18n="tours.t2.title">Lima gastronómica + city experience</h3>
+          <p class="tour-desc" data-i18n="tours.t2.desc">La capital mundial de la gastronomía te espera. Ceviches, mercados tradicionales, barrios icónicos como Barranco y Miraflores, y la mejor cocina de autor del continente.</p>
+          <div class="tour-tags">
+            <span class="tour-tag" data-i18n="tags.food">Gastronomía</span>
+            <span class="tour-tag" data-i18n="tags.city">Ciudad</span>
+            <span class="tour-tag" data-i18n="tags.art">Arte</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tour-item">
+        <div class="tour-image">
+          <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80" alt="Colca Canyon" loading="lazy" />
+          <span class="tour-badge" data-i18n="tours.t3.badge">Aventura</span>
+        </div>
+        <div class="tour-content">
+          <p class="tour-duration" data-i18n="tours.t3.duration">3 – 4 días</p>
+          <h3 class="tour-title" data-i18n="tours.t3.title">Arequipa y Cañón del Colca</h3>
+          <p class="tour-desc" data-i18n="tours.t3.desc">La ciudad blanca te recibe con su arquitectura colonial. Después, el cañón más profundo del mundo y el vuelo majestuoso de los cóndores andinos.</p>
+          <div class="tour-tags">
+            <span class="tour-tag" data-i18n="tags.scenic">Escénico</span>
+            <span class="tour-tag" data-i18n="tags.adventure">Aventura</span>
+            <span class="tour-tag" data-i18n="tags.wildlife">Fauna</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tour-item">
+        <div class="tour-image">
+          <img src="https://images.unsplash.com/photo-1612369695513-af9e243f5f1f?w=800&q=80" alt="Huacachina" loading="lazy" />
+          <span class="tour-badge" data-i18n="tours.t4.badge">Escapada</span>
+        </div>
+        <div class="tour-content">
+          <p class="tour-duration" data-i18n="tours.t4.duration">2 días</p>
+          <h3 class="tour-title" data-i18n="tours.t4.title">Paracas, Islas Ballestas y Huacachina</h3>
+          <p class="tour-desc" data-i18n="tours.t4.desc">Desierto, oasis y mar en un solo viaje. Fauna marina espectacular, sandboarding en dunas gigantes y atardeceres que no olvidarás.</p>
+          <div class="tour-tags">
+            <span class="tour-tag" data-i18n="tags.beach">Playa</span>
+            <span class="tour-tag" data-i18n="tags.desert">Desierto</span>
+            <span class="tour-tag" data-i18n="tags.wildlife">Fauna</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="galeria">
+    <div class="gallery-title">
+      <p class="section-label" data-i18n="gallery.label">Momentos reales</p>
+      <h2 class="section-title" data-i18n="gallery.title">Galería</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1200&q=80" alt="Machu Picchu panorámico" loading="lazy" />
+        <span class="gallery-caption" data-i18n="gallery.c1">Machu Picchu al amanecer</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1580975004385-0f3a3b6d8a8c?w=600&q=80" alt="Textiles andinos" loading="lazy" />
+        <span class="gallery-caption" data-i18n="gallery.c2">Textiles ancestrales</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=600&q=80" alt="Comunidad local" loading="lazy" />
+        <span class="gallery-caption" data-i18n="gallery.c3">Conexión local</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=600&q=80" alt="Ceviche peruano" loading="lazy" />
+        <span class="gallery-caption" data-i18n="gallery.c4">Sabores del Perú</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1571536802807-30451e3955d8?w=600&q=80" alt="Lago Titicaca" loading="lazy" />
+        <span class="gallery-caption" data-i18n="gallery.c5">Lago Titicaca</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=600&q=80" alt="Valle Sagrado" loading="lazy" />
+        <span class="gallery-caption" data-i18n="gallery.c6">Valle Sagrado</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach" id="enfoque">
+    <div class="section-header">
+      <p class="section-label" data-i18n="approach.label">Nuestra filosofía</p>
+      <h2 class="section-title" data-i18n="approach.title">Nuestro enfoque</h2>
+    </div>
+
+    <div class="approach-grid">
+      <article class="approach-card featured">
+        <span class="approach-icon">✦</span>
+        <h3 class="approach-title" data-i18n="approach.c1.title">La esencia CP Agencia Boutique</h3>
+        <p class="approach-text" data-i18n="approach.c1.text">Diseñamos experiencias con atención obsesiva al detalle, liderazgo empático en cada operación y un compromiso genuino con la sostenibilidad. Creemos en el turismo como herramienta de transformación: para quien viaja y para el destino que lo recibe.</p>
+        <div class="approach-values">
+          <span class="value-tag" data-i18n="tags.sustain">Sostenibilidad</span>
+          <span class="value-tag" data-i18n="tags.authentic">Autenticidad</span>
+          <span class="value-tag" data-i18n="tags.impact">Impacto social</span>
+        </div>
+      </article>
+
+      <article class="approach-card">
+        <span class="approach-icon">🤝</span>
+        <h3 class="approach-title" data-i18n="approach.c2.title">Acompañamiento real</h3>
+        <p class="approach-text" data-i18n="approach.c2.text">No desaparecemos después de la venta. Estamos contigo desde la primera consulta hasta el último día de viaje. Y después también.</p>
+      </article>
+
+      <article class="approach-card">
+        <span class="approach-icon">🌱</span>
+        <h3 class="approach-title" data-i18n="approach.c3.title">Turismo responsable</h3>
+        <p class="approach-text" data-i18n="approach.c3.text">Trabajamos con comunidades locales, proveedores éticos y prácticas que minimizan el impacto ambiental. Viajar bien es viajar consciente.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contacto">
+    <div class="section-header">
+      <p class="section-label" data-i18n="contact.label">Hablemos</p>
+      <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3 class="contact-info-title serif" data-i18n="contact.info.title">¿Listo para tu próxima aventura?</h3>
+        <p class="contact-info-text" data-i18n="contact.info.text">Cuéntanos qué tienes en mente y diseñamos juntos tu viaje ideal por el Perú. Sin compromisos, con toda la pasión.</p>
+        
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📱</span>
+          <div>
+            <p class="contact-detail-label">WhatsApp</p>
+            <p class="contact-detail-value">+51 000 000 000</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-detail-icon">✉️</span>
+          <div>
+            <p class="contact-detail-label" data-i18n="contact.email">Email</p>
+            <p class="contact-detail-value">contacto@cpagenciaboutique.com</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <div>
+            <p class="contact-detail-label" data-i18n="contact.location">Ubicación</p>
+            <p class="contact-detail-value">Lima, Perú</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 class="form-title serif" data-i18n="form.title">Cotiza tu viaje</h3>
+        <form id="contact-form">
+          <div class="form-group">
+            <label class="form-label" for="name" data-i18n="form.name">Nombre</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Tu nombre" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email" data-i18n="form.email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="tu@correo.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="trip-type" data-i18n="form.trip">Tipo de viaje</label>
+            <select class="form-select" id="trip-type" name="trip-type">
+              <option value="custom" data-i18n="form.opt1">A medida</option>
+              <option value="family" data-i18n="form.opt2">Familiar</option>
+              <option value="couple" data-i18n="form.opt3">Pareja</option>
+              <option value="friends" data-i18n="form.opt4">Amigos</option>
+              <option value="corporate" data-i18n="form.opt5">Corporativo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message" data-i18n="form.message">Mensaje</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Fechas, ciudades, número de personas, intereses..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" data-i18n="form.submit">Enviar solicitud</button>
+          
+          <div class="form-message" id="form-message" data-i18n="form.success">
+            ✅ ¡Gracias! Hemos recibido tu solicitud. Te contactaremos pronto.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="logo-mark">CP</div>
+        <span class="logo-text serif">CP Agencia Boutique</span>
+      </div>
+
+      <p class="footer-tagline" data-i18n="footer.tagline">Turismo boutique · responsable · auténtico</p>
+
+      <div class="footer-links">
+        <a href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="#tours" data-i18n="nav.tours">Tours</a>
+        <a href="#galeria" data-i18n="nav.gallery">Galería</a>
+        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+      </div>
+
+      <p class="footer-copy">© <span id="year"></span> CP Agencia Boutique. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // i18n translations
+    const I18N = {
+      es: {
+        "nav.services": "Servicios",
+        "nav.tours": "Tours",
+        "nav.gallery": "Galería",
+        "nav.approach": "Enfoque",
+        "nav.contact": "Contacto",
+        "nav.cta": "Cotizar",
+        "hero.kicker": "Experiencias boutique en Perú",
+        "hero.title": "Viaja con alma, descubre lo auténtico",
+        "hero.desc": "Diseñamos experiencias únicas en Perú: hoteles selectos, guías expertos y una logística impecable para que solo te preocupes de vivir el momento.",
+        "hero.cta1": "Explorar tours",
+        "hero.cta2": "Nuestro enfoque",
+        "intro.title": "Turismo con intención, viajes con significado",
+        "intro.text": "No somos una agencia más. Creemos que viajar bien es viajar con calma, con conexión real con el destino y con el soporte de alguien que realmente conoce cada rincón del Perú. Cada itinerario es una conversación, cada experiencia está cuidada al detalle.",
+        "services.label": "Lo que hacemos",
+        "services.title": "Servicios",
+        "services.s1.title": "Hoteles boutique",
+        "services.s1.desc": "Seleccionamos hospedajes con alma: desde haciendas históricas hasta lodges con vistas únicas. Cada lugar cuenta una historia.",
+        "services.s2.title": "Traslados privados",
+        "services.s2.desc": "Movilidad segura y puntual. Aeropuertos, rutas internas y transfers coordinados para que fluyas sin preocupaciones.",
+        "services.s3.title": "Guías expertos",
+        "services.s3.desc": "Profesionales bilingües con narrativa cultural auténtica. No solo informan: conectan, inspiran y adaptan el ritmo a tu grupo.",
+        "services.s4.title": "Planificación a medida",
+        "services.s4.desc": "Diseñamos itinerarios según tus fechas, energía, intereses y temporada. Nada genérico: todo pensado para ti.",
+        "services.s5.title": "Operación integral",
+        "services.s5.desc": "Reservas, tickets, tiempos, proveedores y soporte en ruta. Coordinamos todo para que tú solo disfrutes.",
+        "services.s6.title": "Soporte continuo",
+        "services.s6.desc": "Acompañamiento antes, durante y después del viaje. Estamos a una llamada de distancia, siempre.",
+        "tours.label": "Rutas sugeridas",
+        "tours.title": "Tours destacados",
+        "tours.t1.badge": "Más popular",
+        "tours.t1.duration": "4 – 6 días",
+        "tours.t1.title": "Cusco, Valle Sagrado y Machu Picchu",
+        "tours.t1.desc": "El viaje clásico que no puede faltar. Historia milenaria, paisajes andinos de ensueño y la magia de la ciudadela inca. Incluye hoteles boutique, guías expertos y experiencias gastronómicas locales.",
+        "tours.t2.badge": "Gourmet",
+        "tours.t2.duration": "2 – 3 días",
+        "tours.t2.title": "Lima gastronómica + city experience",
+        "tours.t2.desc": "La capital mundial de la gastronomía te espera. Ceviches, mercados tradicionales, barrios icónicos como Barranco y Miraflores, y la mejor cocina de autor del continente.",
+        "tours.t3.badge": "Aventura",
+        "tours.t3.duration": "3 – 4 días",
+        "tours.t3.title": "Arequipa y Cañón del Colca",
+        "tours.t3.desc": "La ciudad blanca te recibe con su arquitectura colonial. Después, el cañón más profundo del mundo y el vuelo majestuoso de los cóndores andinos.",
+        "tours.t4.badge": "Escapada",
+        "tours.t4.duration": "2 días",
+        "tours.t4.title": "Paracas, Islas Ballestas y Huacachina",
+        "tours.t4.desc": "Desierto, oasis y mar en un solo viaje. Fauna marina espectacular, sandboarding en dunas gigantes y atardeceres que no olvidarás.",
+        "gallery.label": "Momentos reales",
+        "gallery.title": "Galería",
+        "gallery.c1": "Machu Picchu al amanecer",
+        "gallery.c2": "Textiles ancestrales",
+        "gallery.c3": "Conexión local",
+        "gallery.c4": "Sabores del Perú",
+        "gallery.c5": "Lago Titicaca",
+        "gallery.c6": "Valle Sagrado",
+        "approach.label": "Nuestra filosofía",
+        "approach.title": "Nuestro enfoque",
+        "approach.c1.title": "La esencia CP Agencia Boutique",
+        "approach.c1.text": "Diseñamos experiencias con atención obsesiva al detalle, liderazgo empático en cada operación y un compromiso genuino con la sostenibilidad. Creemos en el turismo como herramienta de transformación: para quien viaja y para el destino que lo recibe.",
+        "approach.c2.title": "Acompañamiento real",
+        "approach.c2.text": "No desaparecemos después de la venta. Estamos contigo desde la primera consulta hasta el último día de viaje. Y después también.",
+        "approach.c3.title": "Turismo responsable",
+        "approach.c3.text": "Trabajamos con comunidades locales, proveedores éticos y prácticas que minimizan el impacto ambiental. Viajar bien es viajar consciente.",
+        "contact.label": "Hablemos",
+        "contact.title": "Contacto",
+        "contact.info.title": "¿Listo para tu próxima aventura?",
+        "contact.info.text": "Cuéntanos qué tienes en mente y diseñamos juntos tu viaje ideal por el Perú. Sin compromisos, con toda la pasión.",
+        "contact.email": "Email",
+        "contact.location": "Ubicación",
+        "form.title": "Cotiza tu viaje",
+        "form.name": "Nombre",
+        "form.email": "Email",
+        "form.trip": "Tipo de viaje",
+        "form.opt1": "A medida",
+        "form.opt2": "Familiar",
+        "form.opt3": "Pareja",
+        "form.opt4": "Amigos",
+        "form.opt5": "Corporativo",
+        "form.message": "Mensaje",
+        "form.submit": "Enviar solicitud",
+        "form.success": "✅ ¡Gracias! Hemos recibido tu solicitud. Te contactaremos pronto.",
+        "tags.culture": "Cultura",
+        "tags.history": "Historia",
+        "tags.nature": "Naturaleza",
+        "tags.food": "Gastronomía",
+        "tags.city": "Ciudad",
+        "tags.art": "Arte",
+        "tags.scenic": "Escénico",
+        "tags.adventure": "Aventura",
+        "tags.wildlife": "Fauna",
+        "tags.beach": "Playa",
+        "tags.desert": "Desierto",
+        "tags.sustain": "Sostenibilidad",
+        "tags.authentic": "Autenticidad",
+        "tags.impact": "Impacto social",
+        "footer.tagline": "Turismo boutique · responsable · auténtico",
+        "footer.rights": "Todos los derechos reservados."
+      },
+      en: {
+        "nav.services": "Services",
+        "nav.tours": "Tours",
+        "nav.gallery": "Gallery",
+        "nav.approach": "Approach",
+        "nav.contact": "Contact",
+        "nav.cta": "Get Quote",
+        "hero.kicker": "Boutique experiences in Peru",
+        "hero.title": "Travel with soul, discover the authentic",
+        "hero.desc": "We design unique experiences in Peru: select hotels, expert guides, and flawless logistics so you can focus on living the moment.",
+        "hero.cta1": "Explore tours",
+        "hero.cta2": "Our approach",
+        "intro.title": "Intentional tourism, meaningful journeys",
+        "intro.text": "We're not just another agency. We believe that traveling well means traveling calmly, with real connection to the destination and the support of someone who truly knows every corner of Peru. Every itinerary is a conversation, every experience is carefully curated.",
+        "services.label": "What we do",
+        "services.title": "Services",
+        "services.s1.title": "Boutique hotels",
+        "services.s1.desc": "We select accommodations with soul: from historic haciendas to lodges with unique views. Every place tells a story.",
+        "services.s2.title": "Private transfers",
+        "services.s2.desc": "Safe and punctual mobility. Airports, internal routes, and coordinated transfers so you can flow without worries.",
+        "services.s3.title": "Expert guides",
+        "services.s3.desc": "Bilingual professionals with authentic cultural narrative. They don't just inform: they connect, inspire, and adapt the pace to your group.",
+        "services.s4.title": "Custom planning",
+        "services.s4.desc": "We design itineraries based on your dates, energy, interests, and season. Nothing generic: everything designed for you.",
+        "services.s5.title": "Full operations",
+        "services.s5.desc": "Reservations, tickets, timing, vendors, and route support. We coordinate everything so you just enjoy.",
+        "services.s6.title": "Ongoing support",
+        "services.s6.desc": "Accompaniment before, during, and after the trip. We're always just a call away.",
+        "tours.label": "Suggested routes",
+        "tours.title": "Featured tours",
+        "tours.t1.badge": "Most popular",
+        "tours.t1.duration": "4 – 6 days",
+        "tours.t1.title": "Cusco, Sacred Valley & Machu Picchu",
+        "tours.t1.desc": "The classic journey you can't miss. Ancient history, dreamy Andean landscapes, and the magic of the Inca citadel. Includes boutique hotels, expert guides, and local gastronomic experiences.",
+        "tours.t2.badge": "Gourmet",
+        "tours.t2.duration": "2 – 3 days",
+        "tours.t2.title": "Gastronomic Lima + city experience",
+        "tours.t2.desc": "The world's culinary capital awaits. Ceviches, traditional markets, iconic neighborhoods like Barranco and Miraflores, and the continent's finest author cuisine.",
+        "tours.t3.badge": "Adventure",
+        "tours.t3.duration": "3 – 4 days",
+        "tours.t3.title": "Arequipa & Colca Canyon",
+        "tours.t3.desc": "The white city welcomes you with its colonial architecture. Then, the world's deepest canyon and the majestic flight of Andean condors.",
+        "tours.t4.badge": "Getaway",
+        "tours.t4.duration": "2 days",
+        "tours.t4.title": "Paracas, Ballestas Islands & Huacachina",
+        "tours.t4.desc": "Desert, oasis, and sea in one trip. Spectacular marine wildlife, sandboarding on giant dunes, and unforgettable sunsets.",
+        "gallery.label": "Real moments",
+        "gallery.title": "Gallery",
+        "gallery.c1": "Machu Picchu at sunrise",
+        "gallery.c2": "Ancestral textiles",
+        "gallery.c3": "Local connection",
+        "gallery.c4": "Flavors of Peru",
+        "gallery.c5": "Lake Titicaca",
+        "gallery.c6": "Sacred Valley",
+        "approach.label": "Our philosophy",
+        "approach.title": "Our approach",
+        "approach.c1.title": "The CP Agencia Boutique essence",
+        "approach.c1.text": "We design experiences with obsessive attention to detail, empathetic leadership in every operation, and a genuine commitment to sustainability. We believe in tourism as a transformation tool: for the traveler and for the destination.",
+        "approach.c2.title": "Real accompaniment",
+        "approach.c2.text": "We don't disappear after the sale. We're with you from the first inquiry to the last day of your trip. And after too.",
+        "approach.c3.title": "Responsible tourism",
+        "approach.c3.text": "We work with local communities, ethical suppliers, and practices that minimize environmental impact. Traveling well means traveling consciously.",
+        "contact.label": "Let's talk",
+        "contact.title": "Contact",
+        "contact.info.title": "Ready for your next adventure?",
+        "contact.info.text": "Tell us what you have in mind and let's design your ideal trip through Peru together. No commitments, all passion.",
+        "contact.email": "Email",
+        "contact.location": "Location",
+        "form.title": "Get a quote",
+        "form.name": "Name",
+        "form.email": "Email",
+        "form.trip": "Trip type",
+        "form.opt1": "Custom",
+        "form.opt2": "Family",
+        "form.opt3": "Couple",
+        "form.opt4": "Friends",
+        "form.opt5": "Corporate",
+        "form.message": "Message",
+        "form.submit": "Send request",
+        "form.success": "✅ Thank you! We've received your request. We'll contact you soon.",
+        "tags.culture": "Culture",
+        "tags.history": "History",
+        "tags.nature": "Nature",
+        "tags.food": "Gastronomy",
+        "tags.city": "City",
+        "tags.art": "Art",
+        "tags.scenic": "Scenic",
+        "tags.adventure": "Adventure",
+        "tags.wildlife": "Wildlife",
+        "tags.beach": "Beach",
+        "tags.desert": "Desert",
+        "tags.sustain": "Sustainability",
+        "tags.authentic": "Authenticity",
+        "tags.impact": "Social impact",
+        "footer.tagline": "Boutique · responsible · authentic travel",
+        "footer.rights": "All rights reserved."
+      }
+    };
+
+    // Apply language
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang][key]) {
+          el.textContent = I18N[lang][key];
+        }
+      });
+
+      // Update placeholders
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      
+      if (lang === 'en') {
+        nameInput.placeholder = 'Your name';
+        emailInput.placeholder = 'your@email.com';
+        messageInput.placeholder = 'Dates, cities, group size, interests...';
+      } else {
+        nameInput.placeholder = 'Tu nombre';
+        emailInput.placeholder = 'tu@correo.com';
+        messageInput.placeholder = 'Fechas, ciudades, número de personas, intereses...';
+      }
+
+      // Update button states
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      
+      localStorage.setItem('cp_lang', lang);
+    }
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+    });
+
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Language buttons
+    document.getElementById('btn-es').addEventListener('click', () => applyLang('es'));
+    document.getElementById('btn-en').addEventListener('click', () => applyLang('en'));
+
+    // Form submission
+    const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formMessage.classList.add('show');
+      form.reset();
+      setTimeout(() => {
+        formMessage.classList.remove('show');
+      }, 5000);
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Initialize
+    const savedLang = localStorage.getItem('cp_lang') || 'es';
+    applyLang(savedLang);
+  </script>
+</body>
+</html>
