@@ -2,9 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CP Agencia Boutique | Viajes a Perú</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>CP Agencia Boutique | Viajes Boutique a Perú</title>
   <meta name="description" content="CP Agencia Boutique: turismo boutique en Perú. Hoteles, traslados, guiados y tours con enfoque sostenible y experiencias auténticas." />
+  <meta name="keywords" content="viajes Perú, turismo boutique, Machu Picchu, tours personalizados, agencia de viajes Lima" />
+  <meta name="author" content="CP Agencia Boutique" />
+  <meta name="theme-color" content="#1a1814" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cpagenciaboutique.com/" />
+  <meta property="og:title" content="CP Agencia Boutique | Viajes Boutique a Perú" />
+  <meta property="og:description" content="Diseñamos experiencias únicas en Perú: hoteles selectos, guías expertos y una logística impecable." />
+  <meta property="og:image" content="https://cpagenciaboutique.com/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="CP Agencia Boutique | Viajes Boutique a Perú" />
+  <meta property="twitter:description" content="Diseñamos experiencias únicas en Perú: hoteles selectos, guías expertos y una logística impecable." />
+
+  <!-- Favicon SVG inline como data URI para que funcione sin archivos externos -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23c4533a'/%3E%3Ctext x='50' y='62' font-family='Georgia, serif' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3ECP%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23c4533a'/%3E%3Ctext x='50' y='62' font-family='Georgia, serif' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3ECP%3C/text%3E%3C/svg%3E" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://cpagenciaboutique.com/" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,21 +40,23 @@
       --gold: #b8860b;
       --sage: #7d8c6e;
       --sand: #e8e0d5;
-      --mist: rgba(26,24,20,.5);
+      --mist: rgba(26,24,20,.6);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     html {
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--cream);
       color: var(--stone);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     .serif {
@@ -46,7 +70,7 @@
       left: 0;
       right: 0;
       z-index: 100;
-      padding: 1.25rem 2rem;
+      padding: 0.875rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -54,47 +78,51 @@
     }
 
     header.scrolled {
-      background: rgba(250,248,245,.9);
+      background: rgba(250,248,245,.95);
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.08);
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: .75rem;
+      gap: 0.6rem;
       text-decoration: none;
       color: var(--stone);
     }
 
     .logo-mark {
-      width: 42px;
-      height: 42px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--terracotta), var(--gold));
       display: grid;
       place-items: center;
       color: white;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
+      flex-shrink: 0;
     }
 
     .logo-text {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: -.02em;
+      white-space: nowrap;
     }
 
     nav {
       display: none;
-      gap: 2.5rem;
+      gap: 2rem;
     }
 
     nav a {
       text-decoration: none;
       color: var(--stone);
-      font-size: .875rem;
+      font-size: .8rem;
       font-weight: 500;
       letter-spacing: .04em;
       text-transform: uppercase;
@@ -119,25 +147,27 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .lang-switch {
       display: flex;
-      gap: .5rem;
+      gap: .35rem;
     }
 
     .lang-btn {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid rgba(26,24,20,.15);
       background: transparent;
       cursor: pointer;
-      font-size: .8rem;
+      font-size: .7rem;
+      font-weight: 600;
       transition: all .2s ease;
       display: grid;
       place-items: center;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .lang-btn:hover,
@@ -148,18 +178,19 @@
     }
 
     .btn-cta {
-      display: inline-flex;
+      display: none;
       align-items: center;
       gap: .5rem;
-      padding: .75rem 1.5rem;
+      padding: .65rem 1.25rem;
       background: var(--stone);
       color: var(--cream);
       text-decoration: none;
-      font-size: .875rem;
+      font-size: .8rem;
       font-weight: 500;
       letter-spacing: .03em;
       border-radius: 100px;
       transition: all .3s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .btn-cta:hover {
@@ -175,20 +206,22 @@
       border: none;
       cursor: pointer;
       padding: .5rem;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .menu-toggle span {
-      width: 24px;
+      width: 22px;
       height: 2px;
       background: var(--stone);
       transition: all .3s ease;
+      border-radius: 2px;
     }
 
     /* === HERO === */
     .hero {
       min-height: 100vh;
+      min-height: 100dvh;
       display: grid;
-      grid-template-columns: 1fr;
       position: relative;
     }
 
@@ -202,13 +235,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(.85);
-      animation: slowZoom 20s ease-in-out infinite alternate;
+      object-position: center 30%;
+      filter: brightness(.8);
+      animation: slowZoom 25s ease-in-out infinite alternate;
     }
 
     @keyframes slowZoom {
       from { transform: scale(1); }
-      to { transform: scale(1.08); }
+      to { transform: scale(1.1); }
     }
 
     .hero-overlay {
@@ -216,9 +250,9 @@
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(26,24,20,.2) 0%,
+        rgba(26,24,20,.3) 0%,
         rgba(26,24,20,.1) 40%,
-        rgba(26,24,20,.6) 100%
+        rgba(26,24,20,.7) 100%
       );
     }
 
@@ -228,37 +262,38 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 2rem;
-      padding-bottom: 4rem;
+      padding: 1.5rem;
+      padding-top: 80px;
+      padding-bottom: 3rem;
       color: var(--cream);
     }
 
     .hero-kicker {
       display: inline-flex;
       align-items: center;
-      gap: .75rem;
-      font-size: .75rem;
+      gap: .5rem;
+      font-size: .65rem;
       font-weight: 500;
-      letter-spacing: .15em;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       opacity: .9;
     }
 
     .hero-kicker::before {
       content: '';
-      width: 40px;
+      width: 30px;
       height: 1px;
       background: currentColor;
     }
 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-size: clamp(2rem, 9vw, 4.5rem);
       font-weight: 400;
-      line-height: 1.1;
-      max-width: 14ch;
-      margin-bottom: 1.5rem;
+      line-height: 1.08;
+      max-width: 12ch;
+      margin-bottom: 1.25rem;
       animation: fadeUp .8s ease-out;
     }
 
@@ -274,33 +309,36 @@
     }
 
     .hero-desc {
-      font-size: 1.1rem;
-      max-width: 50ch;
+      font-size: 1rem;
+      max-width: 45ch;
       opacity: .9;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       animation: fadeUp .8s ease-out .2s backwards;
+      line-height: 1.7;
     }
 
     .hero-ctas {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      flex-direction: column;
+      gap: .75rem;
       animation: fadeUp .8s ease-out .4s backwards;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: .5rem;
-      padding: 1rem 2rem;
+      padding: 1rem 1.75rem;
       background: var(--cream);
       color: var(--stone);
       text-decoration: none;
-      font-size: .9rem;
+      font-size: .875rem;
       font-weight: 600;
       letter-spacing: .03em;
       border-radius: 100px;
       transition: all .3s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .btn-primary:hover {
@@ -312,54 +350,33 @@
     .btn-outline {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: .5rem;
-      padding: 1rem 2rem;
+      padding: 1rem 1.75rem;
       background: transparent;
       color: var(--cream);
       text-decoration: none;
-      font-size: .9rem;
+      font-size: .875rem;
       font-weight: 500;
       letter-spacing: .03em;
       border: 1px solid rgba(250,248,245,.4);
       border-radius: 100px;
       transition: all .3s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .btn-outline:hover {
-      background: rgba(250,248,245,.1);
+      background: rgba(250,248,245,.15);
       border-color: var(--cream);
     }
 
     .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-      color: var(--cream);
-      font-size: .7rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      opacity: .7;
-      animation: bounce 2s ease-in-out infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(8px); }
-    }
-
-    .scroll-indicator svg {
-      width: 20px;
-      height: 20px;
+      display: none;
     }
 
     /* === INTRO === */
     .intro {
-      padding: 6rem 2rem;
+      padding: 4rem 1.5rem;
       display: grid;
       place-items: center;
       text-align: center;
@@ -374,71 +391,72 @@
       left: 50%;
       transform: translateX(-50%);
       width: 1px;
-      height: 60px;
+      height: 50px;
       background: linear-gradient(to bottom, var(--sand), transparent);
     }
 
     .intro-content {
-      max-width: 700px;
+      max-width: 600px;
     }
 
     .intro-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-size: clamp(1.5rem, 5vw, 2.25rem);
       font-weight: 400;
       line-height: 1.3;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .intro-text {
       color: var(--mist);
-      font-size: 1.05rem;
-      line-height: 1.8;
+      font-size: .95rem;
+      line-height: 1.85;
     }
 
     .divider-icon {
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       opacity: .3;
+      font-size: 1.25rem;
     }
 
     /* === SERVICES === */
     .services {
-      padding: 4rem 2rem 6rem;
+      padding: 3rem 1.5rem 4rem;
       background: var(--sand);
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 2.5rem;
     }
 
     .section-label {
-      font-size: .75rem;
+      font-size: .7rem;
       font-weight: 600;
-      letter-spacing: .2em;
+      letter-spacing: .18em;
       text-transform: uppercase;
       color: var(--terracotta);
-      margin-bottom: .75rem;
+      margin-bottom: .5rem;
     }
 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.75rem, 6vw, 2.75rem);
       font-weight: 400;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .service-card {
-      padding: 2.5rem 2rem;
+      padding: 1.75rem 1.5rem;
       background: var(--cream);
-      border-radius: 20px;
+      border-radius: 16px;
       transition: all .4s ease;
       position: relative;
       overflow: hidden;
@@ -450,7 +468,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 3px;
       background: linear-gradient(90deg, var(--terracotta), var(--gold));
       transform: scaleX(0);
       transform-origin: left;
@@ -458,8 +476,8 @@
     }
 
     .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(26,24,20,.1);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(26,24,20,.1);
     }
 
     .service-card:hover::before {
@@ -467,36 +485,36 @@
     }
 
     .service-icon {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 1.5rem;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.25rem;
       display: grid;
       place-items: center;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
 
     .service-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      margin-bottom: .75rem;
+      margin-bottom: .5rem;
     }
 
     .service-desc {
       color: var(--mist);
-      font-size: .95rem;
+      font-size: .9rem;
       line-height: 1.7;
     }
 
     /* === TOURS === */
     .tours {
-      padding: 6rem 2rem;
+      padding: 4rem 1.5rem;
       background: var(--cream);
     }
 
     .tours-showcase {
       display: grid;
-      gap: 3rem;
+      gap: 2.5rem;
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -504,17 +522,13 @@
     .tour-item {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
       align-items: center;
-    }
-
-    .tour-item:nth-child(even) .tour-image {
-      order: 1;
     }
 
     .tour-image {
       position: relative;
-      border-radius: 24px;
+      border-radius: 20px;
       overflow: hidden;
       aspect-ratio: 4/3;
     }
@@ -532,58 +546,59 @@
 
     .tour-badge {
       position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
-      padding: .5rem 1rem;
+      top: 1rem;
+      left: 1rem;
+      padding: .4rem .85rem;
       background: rgba(250,248,245,.95);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-radius: 100px;
-      font-size: .75rem;
+      font-size: .7rem;
       font-weight: 600;
-      letter-spacing: .05em;
+      letter-spacing: .04em;
       text-transform: uppercase;
       color: var(--terracotta);
     }
 
     .tour-content {
-      padding: 1rem 0;
+      padding: 0;
     }
 
     .tour-duration {
-      font-size: .8rem;
+      font-size: .75rem;
       font-weight: 500;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--sage);
-      margin-bottom: .75rem;
+      margin-bottom: .5rem;
     }
 
     .tour-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-size: clamp(1.5rem, 5vw, 2.25rem);
       font-weight: 400;
-      margin-bottom: 1rem;
+      margin-bottom: .75rem;
       line-height: 1.2;
     }
 
     .tour-desc {
       color: var(--mist);
-      font-size: 1rem;
+      font-size: .9rem;
       line-height: 1.8;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .tour-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: .5rem;
+      gap: .4rem;
     }
 
     .tour-tag {
-      padding: .4rem .9rem;
+      padding: .35rem .75rem;
       background: var(--sand);
       border-radius: 100px;
-      font-size: .8rem;
+      font-size: .75rem;
       font-weight: 500;
       color: var(--stone);
     }
@@ -596,7 +611,7 @@
 
     .gallery-title {
       text-align: center;
-      padding: 4rem 2rem 3rem;
+      padding: 3rem 1.5rem 2.5rem;
       background: var(--stone);
       color: var(--cream);
     }
@@ -612,7 +627,7 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 4px;
+      gap: 3px;
     }
 
     .gallery-item {
@@ -624,7 +639,7 @@
 
     .gallery-item:first-child {
       grid-column: span 2;
-      aspect-ratio: 2/1;
+      aspect-ratio: 16/9;
     }
 
     .gallery-item img {
@@ -635,7 +650,7 @@
     }
 
     .gallery-item:hover img {
-      transform: scale(1.1);
+      transform: scale(1.08);
     }
 
     .gallery-item::after {
@@ -653,11 +668,12 @@
 
     .gallery-caption {
       position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
       color: var(--cream);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-style: italic;
       opacity: 0;
       transform: translateY(10px);
@@ -672,22 +688,22 @@
 
     /* === APPROACH === */
     .approach {
-      padding: 6rem 2rem;
+      padding: 4rem 1.5rem;
       background: var(--cream);
     }
 
     .approach-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: 1.25rem;
       max-width: 1100px;
       margin: 0 auto;
     }
 
     .approach-card {
-      padding: 3rem;
+      padding: 2rem 1.5rem;
       background: linear-gradient(135deg, var(--sand), rgba(232,224,213,.3));
-      border-radius: 24px;
+      border-radius: 20px;
       position: relative;
       overflow: hidden;
     }
@@ -702,20 +718,20 @@
     }
 
     .approach-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
       display: block;
     }
 
     .approach-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 400;
-      margin-bottom: 1rem;
+      margin-bottom: .75rem;
     }
 
     .approach-text {
-      font-size: 1rem;
+      font-size: .9rem;
       line-height: 1.8;
       opacity: .85;
     }
@@ -723,15 +739,15 @@
     .approach-values {
       display: flex;
       flex-wrap: wrap;
-      gap: .75rem;
-      margin-top: 1.5rem;
+      gap: .5rem;
+      margin-top: 1.25rem;
     }
 
     .value-tag {
-      padding: .5rem 1rem;
+      padding: .4rem .85rem;
       background: rgba(250,248,245,.15);
       border-radius: 100px;
-      font-size: .8rem;
+      font-size: .75rem;
       font-weight: 500;
     }
 
@@ -741,36 +757,37 @@
 
     /* === CONTACT === */
     .contact {
-      padding: 6rem 2rem;
+      padding: 4rem 1.5rem;
       background: var(--sand);
     }
 
     .contact-wrapper {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: 1.5rem;
       max-width: 1100px;
       margin: 0 auto;
     }
 
     .contact-info {
-      padding: 2.5rem;
+      padding: 2rem 1.5rem;
       background: var(--stone);
       color: var(--cream);
-      border-radius: 24px;
+      border-radius: 20px;
     }
 
     .contact-info-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 400;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .contact-info-text {
       opacity: .8;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       line-height: 1.7;
+      font-size: .9rem;
     }
 
     .contact-detail {
@@ -782,59 +799,92 @@
     }
 
     .contact-detail-icon {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       background: rgba(250,248,245,.1);
       border-radius: 50%;
       display: grid;
       place-items: center;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      flex-shrink: 0;
     }
 
     .contact-detail-label {
-      font-size: .75rem;
+      font-size: .7rem;
       letter-spacing: .1em;
       text-transform: uppercase;
       opacity: .6;
-      margin-bottom: .25rem;
+      margin-bottom: .15rem;
     }
 
     .contact-detail-value {
       font-weight: 500;
+      font-size: .9rem;
+    }
+
+    .contact-detail-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-detail-value a:hover {
+      text-decoration: underline;
+    }
+
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: all .3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
     }
 
     .contact-form {
-      padding: 2.5rem;
+      padding: 2rem 1.5rem;
       background: var(--cream);
-      border-radius: 24px;
+      border-radius: 20px;
     }
 
     .form-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 400;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .form-label {
       display: block;
-      font-size: .8rem;
+      font-size: .75rem;
       font-weight: 600;
       letter-spacing: .05em;
       text-transform: uppercase;
       color: var(--mist);
-      margin-bottom: .5rem;
+      margin-bottom: .4rem;
     }
 
     .form-input,
     .form-select,
     .form-textarea {
       width: 100%;
-      padding: 1rem 1.25rem;
+      padding: .9rem 1rem;
       border: 1px solid rgba(26,24,20,.12);
       border-radius: 12px;
       background: white;
@@ -842,6 +892,7 @@
       font-size: 1rem;
       color: var(--stone);
       transition: all .3s ease;
+      -webkit-appearance: none;
     }
 
     .form-input:focus,
@@ -853,13 +904,13 @@
     }
 
     .form-textarea {
-      min-height: 120px;
+      min-height: 100px;
       resize: vertical;
     }
 
     .form-submit {
       width: 100%;
-      padding: 1.1rem 2rem;
+      padding: 1rem 2rem;
       background: var(--stone);
       color: var(--cream);
       border: none;
@@ -869,6 +920,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: all .3s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .form-submit:hover {
@@ -879,9 +931,10 @@
     .form-message {
       margin-top: 1rem;
       padding: 1rem;
-      background: rgba(184,134,11,.1);
+      background: rgba(184,134,11,.15);
       border-radius: 12px;
       text-align: center;
+      font-size: .9rem;
       display: none;
     }
 
@@ -891,7 +944,7 @@
 
     /* === FOOTER === */
     footer {
-      padding: 4rem 2rem;
+      padding: 3rem 1.5rem;
       background: var(--stone);
       color: var(--cream);
     }
@@ -903,28 +956,28 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .footer-logo {
       display: flex;
       align-items: center;
-      gap: .75rem;
+      gap: .6rem;
     }
 
     .footer-logo .logo-mark {
-      width: 48px;
-      height: 48px;
+      width: 42px;
+      height: 42px;
     }
 
     .footer-logo .logo-text {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       color: var(--cream);
     }
 
     .footer-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-style: italic;
       opacity: .7;
     }
@@ -933,13 +986,13 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
     .footer-links a {
       color: var(--cream);
       text-decoration: none;
-      font-size: .9rem;
+      font-size: .85rem;
       opacity: .7;
       transition: opacity .3s ease;
     }
@@ -949,7 +1002,7 @@
     }
 
     .footer-copy {
-      font-size: .85rem;
+      font-size: .8rem;
       opacity: .5;
     }
 
@@ -963,7 +1016,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
+      gap: 1.75rem;
       opacity: 0;
       visibility: hidden;
       transition: all .4s ease;
@@ -976,20 +1029,21 @@
 
     .mobile-menu-close {
       position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      width: 48px;
-      height: 48px;
+      top: 1rem;
+      right: 1rem;
+      width: 44px;
+      height: 44px;
       background: none;
       border: none;
       font-size: 2rem;
       cursor: pointer;
       color: var(--stone);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .mobile-menu a {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 1.75rem;
       color: var(--stone);
       text-decoration: none;
       transition: color .3s ease;
@@ -999,19 +1053,145 @@
       color: var(--terracotta);
     }
 
-    /* === RESPONSIVE === */
-    @media (min-width: 768px) {
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+      z-index: 90;
+      transition: all .3s ease;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, .5);
+    }
+
+    /* === TABLET (min-width: 600px) === */
+    @media (min-width: 600px) {
       header {
-        padding: 1.5rem 3rem;
+        padding: 1rem 1.5rem;
+      }
+
+      .btn-cta {
+        display: inline-flex;
       }
 
       .hero-content {
-        padding: 3rem;
+        padding: 2rem;
+        padding-bottom: 4rem;
+      }
+
+      .hero-ctas {
+        flex-direction: row;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        aspect-ratio: 2/1;
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .approach-card.featured {
+        grid-column: span 2;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* === DESKTOP (min-width: 1024px) === */
+    @media (min-width: 1024px) {
+      header {
+        padding: 1.25rem 3rem;
+      }
+
+      nav {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .hero-content {
+        padding: 4rem 5rem;
         padding-bottom: 5rem;
+      }
+
+      .scroll-indicator {
+        display: flex;
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+        color: var(--cream);
+        font-size: .65rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        opacity: .7;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(8px); }
+      }
+
+      .scroll-indicator svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .intro {
+        padding: 6rem 2rem;
+      }
+
+      .services {
+        padding: 5rem 3rem 6rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+
+      .tours {
+        padding: 6rem 3rem;
       }
 
       .tour-item {
         grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .tour-item:nth-child(even) .tour-image {
+        order: 1;
       }
 
       .gallery-grid {
@@ -1024,49 +1204,37 @@
         aspect-ratio: 1;
       }
 
-      .approach-grid {
-        grid-template-columns: 1fr 1fr;
+      .approach {
+        padding: 6rem 3rem;
       }
 
-      .approach-card.featured {
-        grid-column: span 2;
+      .contact {
+        padding: 6rem 3rem;
       }
 
-      .contact-wrapper {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      nav {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: none;
-      }
-
-      .hero-content {
-        padding: 4rem 5rem;
-        padding-bottom: 6rem;
-      }
-
-      .intro {
-        padding: 8rem 2rem;
-      }
-
-      .services {
-        padding: 6rem 3rem 8rem;
-      }
-
-      .tours {
-        padding: 8rem 3rem;
+      .contact-info,
+      .contact-form {
+        padding: 2.5rem;
       }
 
       .footer-content {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
+      }
+
+      .whatsapp-float {
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    /* Fix for iOS Safari 100vh issue */
+    @supports (-webkit-touch-callout: none) {
+      .hero {
+        min-height: -webkit-fill-available;
       }
     }
   </style>
@@ -1075,12 +1243,12 @@
 <body>
   <!-- HEADER -->
   <header id="header">
-    <a href="#" class="logo">
-      <div class="logo-mark">CP</div>
+    <a href="#" class="logo" aria-label="CP Agencia Boutique - Inicio">
+      <div class="logo-mark" aria-hidden="true">CP</div>
       <span class="logo-text">CP Agencia Boutique</span>
     </a>
 
-    <nav>
+    <nav aria-label="Navegación principal">
       <a href="#servicios" data-i18n="nav.services">Servicios</a>
       <a href="#tours" data-i18n="nav.tours">Tours</a>
       <a href="#galeria" data-i18n="nav.gallery">Galería</a>
@@ -1089,12 +1257,12 @@
     </nav>
 
     <div class="header-actions">
-      <div class="lang-switch">
-        <button class="lang-btn active" id="btn-es" title="Español">ES</button>
-        <button class="lang-btn" id="btn-en" title="English">EN</button>
+      <div class="lang-switch" role="group" aria-label="Selector de idioma">
+        <button class="lang-btn active" id="btn-es" title="Español" aria-label="Cambiar a Español">ES</button>
+        <button class="lang-btn" id="btn-en" title="English" aria-label="Switch to English">EN</button>
       </div>
       <a href="#contacto" class="btn-cta" data-i18n="nav.cta">Cotizar</a>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -1103,8 +1271,8 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu">
-    <button class="mobile-menu-close" id="menu-close">×</button>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <button class="mobile-menu-close" id="menu-close" aria-label="Cerrar menú">×</button>
     <a href="#servicios" data-i18n="nav.services">Servicios</a>
     <a href="#tours" data-i18n="nav.tours">Tours</a>
     <a href="#galeria" data-i18n="nav.gallery">Galería</a>
@@ -1113,9 +1281,9 @@
   </div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" aria-label="Bienvenida">
     <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1920&q=80" alt="Machu Picchu al amanecer" />
+      <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=1920&q=80" alt="Vista panorámica de Machu Picchu, Perú" />
       <div class="hero-overlay"></div>
     </div>
 
@@ -1129,7 +1297,7 @@
       </div>
     </div>
 
-    <div class="scroll-indicator">
+    <div class="scroll-indicator" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 5v14M19 12l-7 7-7-7"/>
       </svg>
@@ -1138,54 +1306,54 @@
   </section>
 
   <!-- INTRO -->
-  <section class="intro">
+  <section class="intro" aria-labelledby="intro-title">
     <div class="intro-content">
-      <h2 class="intro-title serif" data-i18n="intro.title">Turismo con intención, viajes con significado</h2>
+      <h2 id="intro-title" class="intro-title serif" data-i18n="intro.title">Turismo con intención, viajes con significado</h2>
       <p class="intro-text" data-i18n="intro.text">No somos una agencia más. Creemos que viajar bien es viajar con calma, con conexión real con el destino y con el soporte de alguien que realmente conoce cada rincón del Perú. Cada itinerario es una conversación, cada experiencia está cuidada al detalle.</p>
-      <div class="divider-icon">✦</div>
+      <div class="divider-icon" aria-hidden="true">✦</div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section class="services" id="servicios">
+  <section class="services" id="servicios" aria-labelledby="services-title">
     <div class="section-header">
       <p class="section-label" data-i18n="services.label">Lo que hacemos</p>
-      <h2 class="section-title" data-i18n="services.title">Servicios</h2>
+      <h2 id="services-title" class="section-title" data-i18n="services.title">Servicios</h2>
     </div>
 
     <div class="services-grid">
       <article class="service-card">
-        <span class="service-icon">🏨</span>
+        <span class="service-icon" aria-hidden="true">🏨</span>
         <h3 class="service-title" data-i18n="services.s1.title">Hoteles boutique</h3>
         <p class="service-desc" data-i18n="services.s1.desc">Seleccionamos hospedajes con alma: desde haciendas históricas hasta lodges con vistas únicas. Cada lugar cuenta una historia.</p>
       </article>
 
       <article class="service-card">
-        <span class="service-icon">🚐</span>
+        <span class="service-icon" aria-hidden="true">🚐</span>
         <h3 class="service-title" data-i18n="services.s2.title">Traslados privados</h3>
         <p class="service-desc" data-i18n="services.s2.desc">Movilidad segura y puntual. Aeropuertos, rutas internas y transfers coordinados para que fluyas sin preocupaciones.</p>
       </article>
 
       <article class="service-card">
-        <span class="service-icon">🎙️</span>
+        <span class="service-icon" aria-hidden="true">🎙️</span>
         <h3 class="service-title" data-i18n="services.s3.title">Guías expertos</h3>
         <p class="service-desc" data-i18n="services.s3.desc">Profesionales bilingües con narrativa cultural auténtica. No solo informan: conectan, inspiran y adaptan el ritmo a tu grupo.</p>
       </article>
 
       <article class="service-card">
-        <span class="service-icon">🗺️</span>
+        <span class="service-icon" aria-hidden="true">🗺️</span>
         <h3 class="service-title" data-i18n="services.s4.title">Planificación a medida</h3>
         <p class="service-desc" data-i18n="services.s4.desc">Diseñamos itinerarios según tus fechas, energía, intereses y temporada. Nada genérico: todo pensado para ti.</p>
       </article>
 
       <article class="service-card">
-        <span class="service-icon">🎫</span>
+        <span class="service-icon" aria-hidden="true">🎫</span>
         <h3 class="service-title" data-i18n="services.s5.title">Operación integral</h3>
         <p class="service-desc" data-i18n="services.s5.desc">Reservas, tickets, tiempos, proveedores y soporte en ruta. Coordinamos todo para que tú solo disfrutes.</p>
       </article>
 
       <article class="service-card">
-        <span class="service-icon">📞</span>
+        <span class="service-icon" aria-hidden="true">📞</span>
         <h3 class="service-title" data-i18n="services.s6.title">Soporte continuo</h3>
         <p class="service-desc" data-i18n="services.s6.desc">Acompañamiento antes, durante y después del viaje. Estamos a una llamada de distancia, siempre.</p>
       </article>
@@ -1193,16 +1361,16 @@
   </section>
 
   <!-- TOURS -->
-  <section class="tours" id="tours">
+  <section class="tours" id="tours" aria-labelledby="tours-title">
     <div class="section-header">
       <p class="section-label" data-i18n="tours.label">Rutas sugeridas</p>
-      <h2 class="section-title" data-i18n="tours.title">Tours destacados</h2>
+      <h2 id="tours-title" class="section-title" data-i18n="tours.title">Tours destacados</h2>
     </div>
 
     <div class="tours-showcase">
       <article class="tour-item">
         <div class="tour-image">
-          <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80" alt="Machu Picchu" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Vista de Machu Picchu con montañas al fondo" loading="lazy" />
           <span class="tour-badge" data-i18n="tours.t1.badge">Más popular</span>
         </div>
         <div class="tour-content">
@@ -1219,7 +1387,7 @@
 
       <article class="tour-item">
         <div class="tour-image">
-          <img src="https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=800&q=80" alt="Lima gastronómica" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Ceviche peruano, plato tradicional de Lima" loading="lazy" />
           <span class="tour-badge" data-i18n="tours.t2.badge">Gourmet</span>
         </div>
         <div class="tour-content">
@@ -1236,7 +1404,7 @@
 
       <article class="tour-item">
         <div class="tour-image">
-          <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80" alt="Colca Canyon" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=800&q=80" alt="Cóndor volando sobre el Cañón del Colca" loading="lazy" />
           <span class="tour-badge" data-i18n="tours.t3.badge">Aventura</span>
         </div>
         <div class="tour-content">
@@ -1253,7 +1421,7 @@
 
       <article class="tour-item">
         <div class="tour-image">
-          <img src="https://images.unsplash.com/photo-1612369695513-af9e243f5f1f?w=800&q=80" alt="Huacachina" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=800&q=80" alt="Oasis de Huacachina rodeado de dunas" loading="lazy" />
           <span class="tour-badge" data-i18n="tours.t4.badge">Escapada</span>
         </div>
         <div class="tour-content">
@@ -1271,50 +1439,50 @@
   </section>
 
   <!-- GALLERY -->
-  <section class="gallery" id="galeria">
+  <section class="gallery" id="galeria" aria-labelledby="gallery-title">
     <div class="gallery-title">
       <p class="section-label" data-i18n="gallery.label">Momentos reales</p>
-      <h2 class="section-title" data-i18n="gallery.title">Galería</h2>
+      <h2 id="gallery-title" class="section-title" data-i18n="gallery.title">Galería</h2>
     </div>
 
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1200&q=80" alt="Machu Picchu panorámico" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=1200&q=80" alt="Machu Picchu panorámico" loading="lazy" />
         <span class="gallery-caption" data-i18n="gallery.c1">Machu Picchu al amanecer</span>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1580975004385-0f3a3b6d8a8c?w=600&q=80" alt="Textiles andinos" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1591190020559-f5c7dbf4a62f?auto=format&fit=crop&w=600&q=80" alt="Textiles coloridos andinos" loading="lazy" />
         <span class="gallery-caption" data-i18n="gallery.c2">Textiles ancestrales</span>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=600&q=80" alt="Comunidad local" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Viajera sonriendo" loading="lazy" />
         <span class="gallery-caption" data-i18n="gallery.c3">Conexión local</span>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=600&q=80" alt="Ceviche peruano" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Ceviche peruano" loading="lazy" />
         <span class="gallery-caption" data-i18n="gallery.c4">Sabores del Perú</span>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1571536802807-30451e3955d8?w=600&q=80" alt="Lago Titicaca" loading="lazy" />
-        <span class="gallery-caption" data-i18n="gallery.c5">Lago Titicaca</span>
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80" alt="Montañas andinas" loading="lazy" />
+        <span class="gallery-caption" data-i18n="gallery.c5">Paisajes andinos</span>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=600&q=80" alt="Valle Sagrado" loading="lazy" />
-        <span class="gallery-caption" data-i18n="gallery.c6">Valle Sagrado</span>
+        <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=600&q=80" alt="Huacachina al atardecer" loading="lazy" />
+        <span class="gallery-caption" data-i18n="gallery.c6">Atardecer en Huacachina</span>
       </div>
     </div>
   </section>
 
   <!-- APPROACH -->
-  <section class="approach" id="enfoque">
+  <section class="approach" id="enfoque" aria-labelledby="approach-title">
     <div class="section-header">
       <p class="section-label" data-i18n="approach.label">Nuestra filosofía</p>
-      <h2 class="section-title" data-i18n="approach.title">Nuestro enfoque</h2>
+      <h2 id="approach-title" class="section-title" data-i18n="approach.title">Nuestro enfoque</h2>
     </div>
 
     <div class="approach-grid">
       <article class="approach-card featured">
-        <span class="approach-icon">✦</span>
+        <span class="approach-icon" aria-hidden="true">✦</span>
         <h3 class="approach-title" data-i18n="approach.c1.title">La esencia CP Agencia Boutique</h3>
         <p class="approach-text" data-i18n="approach.c1.text">Diseñamos experiencias con atención obsesiva al detalle, liderazgo empático en cada operación y un compromiso genuino con la sostenibilidad. Creemos en el turismo como herramienta de transformación: para quien viaja y para el destino que lo recibe.</p>
         <div class="approach-values">
@@ -1325,13 +1493,13 @@
       </article>
 
       <article class="approach-card">
-        <span class="approach-icon">🤝</span>
+        <span class="approach-icon" aria-hidden="true">🤝</span>
         <h3 class="approach-title" data-i18n="approach.c2.title">Acompañamiento real</h3>
         <p class="approach-text" data-i18n="approach.c2.text">No desaparecemos después de la venta. Estamos contigo desde la primera consulta hasta el último día de viaje. Y después también.</p>
       </article>
 
       <article class="approach-card">
-        <span class="approach-icon">🌱</span>
+        <span class="approach-icon" aria-hidden="true">🌱</span>
         <h3 class="approach-title" data-i18n="approach.c3.title">Turismo responsable</h3>
         <p class="approach-text" data-i18n="approach.c3.text">Trabajamos con comunidades locales, proveedores éticos y prácticas que minimizan el impacto ambiental. Viajar bien es viajar consciente.</p>
       </article>
@@ -1339,10 +1507,10 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact" id="contacto">
+  <section class="contact" id="contacto" aria-labelledby="contact-title">
     <div class="section-header">
       <p class="section-label" data-i18n="contact.label">Hablemos</p>
-      <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+      <h2 id="contact-title" class="section-title" data-i18n="contact.title">Contacto</h2>
     </div>
 
     <div class="contact-wrapper">
@@ -1351,33 +1519,42 @@
         <p class="contact-info-text" data-i18n="contact.info.text">Cuéntanos qué tienes en mente y diseñamos juntos tu viaje ideal por el Perú. Sin compromisos, con toda la pasión.</p>
         
         <div class="contact-detail">
-          <span class="contact-detail-icon">📱</span>
+          <span class="contact-detail-icon" aria-hidden="true">📱</span>
           <div>
             <p class="contact-detail-label">WhatsApp</p>
-            <p class="contact-detail-value">+51 000 000 000</p>
+            <p class="contact-detail-value"><a href="https://wa.me/51951793040" target="_blank" rel="noopener">+51 951 793 040</a></p>
           </div>
         </div>
 
         <div class="contact-detail">
-          <span class="contact-detail-icon">✉️</span>
+          <span class="contact-detail-icon" aria-hidden="true">✉️</span>
           <div>
             <p class="contact-detail-label" data-i18n="contact.email">Email</p>
-            <p class="contact-detail-value">contacto@cpagenciaboutique.com</p>
+            <p class="contact-detail-value"><a href="mailto:ciaraepatroni@gmail.com">ciaraepatroni@gmail.com</a></p>
           </div>
         </div>
 
         <div class="contact-detail">
-          <span class="contact-detail-icon">📍</span>
+          <span class="contact-detail-icon" aria-hidden="true">📍</span>
           <div>
             <p class="contact-detail-label" data-i18n="contact.location">Ubicación</p>
             <p class="contact-detail-value">Lima, Perú</p>
           </div>
         </div>
+
+        <a href="https://wa.me/51951793040?text=Hola,%20me%20interesa%20cotizar%20un%20viaje%20a%20Perú" class="whatsapp-btn" target="_blank" rel="noopener">
+          <span aria-hidden="true">💬</span>
+          <span data-i18n="contact.whatsapp">Escribir por WhatsApp</span>
+        </a>
       </div>
 
       <div class="contact-form">
         <h3 class="form-title serif" data-i18n="form.title">Cotiza tu viaje</h3>
-        <form id="contact-form">
+        <form id="contact-form" action="https://formsubmit.co/ciaraepatroni@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nueva cotización desde CP Agencia Boutique">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="#">
+          
           <div class="form-group">
             <label class="form-label" for="name" data-i18n="form.name">Nombre</label>
             <input class="form-input" type="text" id="name" name="name" placeholder="Tu nombre" required />
@@ -1391,11 +1568,11 @@
           <div class="form-group">
             <label class="form-label" for="trip-type" data-i18n="form.trip">Tipo de viaje</label>
             <select class="form-select" id="trip-type" name="trip-type">
-              <option value="custom" data-i18n="form.opt1">A medida</option>
-              <option value="family" data-i18n="form.opt2">Familiar</option>
-              <option value="couple" data-i18n="form.opt3">Pareja</option>
-              <option value="friends" data-i18n="form.opt4">Amigos</option>
-              <option value="corporate" data-i18n="form.opt5">Corporativo</option>
+              <option value="A medida" data-i18n="form.opt1">A medida</option>
+              <option value="Familiar" data-i18n="form.opt2">Familiar</option>
+              <option value="Pareja" data-i18n="form.opt3">Pareja</option>
+              <option value="Amigos" data-i18n="form.opt4">Amigos</option>
+              <option value="Corporativo" data-i18n="form.opt5">Corporativo</option>
             </select>
           </div>
 
@@ -1418,22 +1595,27 @@
   <footer>
     <div class="footer-content">
       <div class="footer-logo">
-        <div class="logo-mark">CP</div>
+        <div class="logo-mark" aria-hidden="true">CP</div>
         <span class="logo-text serif">CP Agencia Boutique</span>
       </div>
 
       <p class="footer-tagline" data-i18n="footer.tagline">Turismo boutique · responsable · auténtico</p>
 
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="Enlaces del pie de página">
         <a href="#servicios" data-i18n="nav.services">Servicios</a>
         <a href="#tours" data-i18n="nav.tours">Tours</a>
         <a href="#galeria" data-i18n="nav.gallery">Galería</a>
         <a href="#contacto" data-i18n="nav.contact">Contacto</a>
-      </div>
+      </nav>
 
       <p class="footer-copy">© <span id="year"></span> CP Agencia Boutique. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/51951793040?text=Hola,%20me%20interesa%20cotizar%20un%20viaje%20a%20Perú" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    💬
+  </a>
 
   <script>
     // i18n translations
@@ -1490,8 +1672,8 @@
         "gallery.c2": "Textiles ancestrales",
         "gallery.c3": "Conexión local",
         "gallery.c4": "Sabores del Perú",
-        "gallery.c5": "Lago Titicaca",
-        "gallery.c6": "Valle Sagrado",
+        "gallery.c5": "Paisajes andinos",
+        "gallery.c6": "Atardecer en Huacachina",
         "approach.label": "Nuestra filosofía",
         "approach.title": "Nuestro enfoque",
         "approach.c1.title": "La esencia CP Agencia Boutique",
@@ -1506,6 +1688,7 @@
         "contact.info.text": "Cuéntanos qué tienes en mente y diseñamos juntos tu viaje ideal por el Perú. Sin compromisos, con toda la pasión.",
         "contact.email": "Email",
         "contact.location": "Ubicación",
+        "contact.whatsapp": "Escribir por WhatsApp",
         "form.title": "Cotiza tu viaje",
         "form.name": "Nombre",
         "form.email": "Email",
@@ -1587,8 +1770,8 @@
         "gallery.c2": "Ancestral textiles",
         "gallery.c3": "Local connection",
         "gallery.c4": "Flavors of Peru",
-        "gallery.c5": "Lake Titicaca",
-        "gallery.c6": "Sacred Valley",
+        "gallery.c5": "Andean landscapes",
+        "gallery.c6": "Sunset in Huacachina",
         "approach.label": "Our philosophy",
         "approach.title": "Our approach",
         "approach.c1.title": "The CP Agencia Boutique essence",
@@ -1603,6 +1786,7 @@
         "contact.info.text": "Tell us what you have in mind and let's design your ideal trip through Peru together. No commitments, all passion.",
         "contact.email": "Email",
         "contact.location": "Location",
+        "contact.whatsapp": "Write on WhatsApp",
         "form.title": "Get a quote",
         "form.name": "Name",
         "form.email": "Email",
@@ -1668,9 +1852,11 @@
 
     // Header scroll effect
     const header = document.getElementById('header');
+    let lastScroll = 0;
+    
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    }, { passive: true });
 
     // Mobile menu
     const menuToggle = document.getElementById('menu-toggle');
@@ -1679,15 +1865,21 @@
 
     menuToggle.addEventListener('click', () => {
       mobileMenu.classList.add('open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     });
 
     menuClose.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       });
     });
 
@@ -1695,17 +1887,32 @@
     document.getElementById('btn-es').addEventListener('click', () => applyLang('es'));
     document.getElementById('btn-en').addEventListener('click', () => applyLang('en'));
 
-    // Form submission
+    // Form submission (demo - shows message)
     const form = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
+    // For demo purposes, intercept form
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
+      // In production, remove this to let FormSubmit work
+      // e.preventDefault();
       formMessage.classList.add('show');
-      form.reset();
       setTimeout(() => {
         formMessage.classList.remove('show');
       }, 5000);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
     });
 
     // Footer year
